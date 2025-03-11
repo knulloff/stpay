@@ -4,10 +4,10 @@ const { parse } = require('url')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
-const hostname = 'localhost'
-const port = 3000
+const hostname = 'cool-liger-fe1baf.netlify.app'
+const port = 80
 // when using middleware `hostname` and `port` must be provided below
-const app = next({ dev, hostname, port })
+const app = next({ dev, hostname })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
@@ -32,6 +32,6 @@ app.prepare().then(() => {
     }
   }).listen(port, (err) => {
     if (err) throw err
-    console.log(`> Ready on http://${hostname}:${port}`)
+    console.log(`> Ready on http://${hostname}`)
   })
 })
